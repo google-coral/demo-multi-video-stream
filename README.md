@@ -17,7 +17,7 @@ is pretty demanding, a mid to high end GPU is recommended.
 The window shows 6 video windows as follows:
 
 1. Cars on highway with pipelined inferencing, 4 TPUs
-1. Workers walking around with segmentation inferencing, 1 TPU
+1. Students in classroom with people segmentation, 1 TPU
 1. Workers walking around with detection inferencing and a keepout zone, 1
 TPU
 1. Back yard video with detection inferencing and identification, 1 TPU
@@ -33,7 +33,7 @@ Pressing any other key brings back the tiled view.
 ## Building the demo for x86
 The demo is only tested on an x86
 
-If you have docker installed you can build it by typing:
+If you have docker installed you can build it by typing (preferred way):
 
 ```
 make DOCKER_TARGETS=demo docker-build
