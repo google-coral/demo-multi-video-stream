@@ -1,18 +1,16 @@
 # Edge TPU Multiple Video Streams Demo
 
 This repo contains an end to end demo source code that allows to process
-multiple video streams with ML inference using 8 EdgeTPUs in one system
-together with the [TensorFlow Lite API](https://tensorflow.org/lite) with a
-Coral devices such as the
-[USB Accelerator](https://coral.withgoogle.com/products/accelerator) or
-[Dev Board](https://coral.withgoogle.com/products/dev-board) and provides an
-Object tracker for use with the detected objects.
+multiple video streams with ML inference using 8 EdgeTPUs in one system.
+It is intended to be used with the [ASUS AI Accelerator PCIe Card](https://iot.asus.com/products/AI-accelerator/AI-Accelerator-PCIe-Card/) 
+although it is also possible to use x86 or ARM systems with 8 TPUs (likely 
+combining multiple [USB Accelerators](https://coral.withgoogle.com/products/accelerator) and a 
+host like the the [Dev Board](https://coral.withgoogle.com/products/dev-board)).
 
 The demo is hardcoded to run 5 separate video streams (defined in the Pipeline
-class) with different
-types of inferenceing running on the streams on a total number of 8 TPUs,
-and requires an ASUS AI Accelerator PCIe Card. Since the gstreamer pipeline
-is pretty demanding, a mid to high end GPU is recommended.
+class) with different types of inferenceing running on the streams on a total 
+number of 8 TPUs. In addition to the 8 TPUs, a mid to high end GPU is 
+recommended to handle the mixing/rendering done by the GStreamer pipeline.
 
 The window shows 6 video windows as follows:
 
@@ -38,7 +36,8 @@ If you have docker installed you can build it by typing (preferred way):
 ```
 make DOCKER_TARGETS=demo docker-build
 ```
-building it locally is done by:
+It is also possible to build locally, but you should validate your system has
+the dependecies listed in the [Dockerfile](docker/Dockerfile).
 
 ```
 make demo
